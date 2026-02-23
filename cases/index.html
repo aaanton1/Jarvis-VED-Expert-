@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Кейсы — Джарвис ВЭД Эксперт</title>
+<meta name="description" content="Разбор реальных кейсов селлеров Wildberries и Ozon: как ИИ-брокер помогает экономить на пошлинах, избегать штрафов и ускорять импорт из Китая." />
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cyan: #00E5FF;
+    --bg-top: #050505;
+    --bg-bot: #0A1A2F;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(0, 229, 255, 0.25);
+    --text-white: #FFFFFF;
+    --text-gray: #CCCCCC;
+    --text-muted: #888888;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bot) 100%);
+    background-attachment: fixed;
+    color: var(--text-white);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 60px 24px; }
+  .header { text-align: center; margin-bottom: 60px; }
+  .header h1 { font-size: 42px; font-weight: 800; margin-bottom: 16px; }
+  .header p { color: var(--text-gray); font-size: 18px; }
+  .case-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+  }
+  .case-card:hover { transform: translateY(-5px); border-color: var(--cyan); }
+  .case-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid var(--cyan);
+    border-radius: 100px;
+    font-size: 12px;
+    color: var(--cyan);
+    margin-bottom: 20px;
+  }
+  .case-title { font-size: 28px; font-weight: 700; margin-bottom: 20px; color: var(--cyan); }
+  .case-body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  @media (max-width: 768px) { .case-body { grid-template-columns: 1fr; } }
+  .case-subtitle { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #fff; }
+  .case-results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+  .result-item { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+  .result-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+  .result-value { font-size: 18px; font-weight: 700; }
+  .result-value.green { color: #4ADE80; }
+  .result-value.red { color: #F87171; }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+    color: var(--cyan);
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Кейсы <span style="color:var(--cyan)">успеха</span></h1>
+    <p>Реальные примеры экономии и решения проблем с импортом через Джарвис</p>
+  </div>
+
+  <!-- Case 1 -->
+  <div class="case-card">
+    <div class="case-tag">EMS-массажеры</div>
+    <h3 class="case-title">Кейс №1: Экономия 45 000 ₽ на таможне</h3>
+    <div class="case-body">
+      <div>
+        <h4 class="case-subtitle">Проблема</h4>
+        <p>Селлер Wildberries классифицировал товар как "прочие электроприборы". Таможня сочла их медицинскими изделиями, что грозило доначислением пошлин и НДС.</p>
+        <h4 class="case-subtitle">Решение</h4>
+        <p>Джарвис подобрал корректный код ТН ВЭД, не требующий мед. лицензии, и подготовил обоснование для инспектора.</p>
+      </div>
+      <div>
+        <h4 class="case-subtitle">Результаты</h4>
+        <div class="case-results-grid">
+          <div class="result-item"><div class="result-label">Переплата</div><div class="result-value red">45 000 ₽</div></div>
+          <div class="result-item"><div class="result-label">Экономия</div><div class="result-value green">45 000 ₽</div></div>
+          <div class="result-item"><div class="result-label">Стоимость ИИ</div><div class="result-value">990 ₽</div></div>
+          <div class="result-item"><div class="result-label">ROI</div><div class="result-value green">4445%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case 2 -->
+  <div class="case-card">
+    <div class="case-tag">Одежда (Ozon)</div>
+    <h3 class="case-title">Кейс №2: Разблокировка счёта по 115-ФЗ</h3>
+    <div class="case-body">
+      <div>
+        <h4 class="case-subtitle">Проблема</h4>
+        <p>Банк заблокировал счёт из-за платежей байеру в Китай. Требовалось срочное подтверждение легальности операций.</p>
+        <h4 class="case-subtitle">Решение</h4>
+        <p>Джарвис за 15 минут сформировал полный пакет документов (инвойсы, контракты, пояснения) для финмониторинга.</p>
+      </div>
+      <div>
+        <h4 class="case-subtitle">Результаты</h4>
+        <div class="case-results-grid">
+          <div class="result-item"><div class="result-label">Простой (было)</div><div class="result-value red">7+ дней</div></div>
+          <div class="result-item"><div class="result-label">Срок (стало)</div><div class="result-value green">2 дня</div></div>
+          <div class="result-item"><div class="result-label">Цена юриста</div><div class="result-value red">30 000 ₽</div></div>
+          <div class="result-item"><div class="result-label">Цена ИИ</div><div class="result-value green">990 ₽</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case 3 -->
+  <div class="case-card">
+    <div class="case-tag">Детская одежда</div>
+    <h3 class="case-title">Кейс №3: 0 задержек по Честному ЗНАКу</h3>
+    <div class="case-body">
+      <div>
+        <h4 class="case-subtitle">Проблема</h4>
+        <p>Постоянные простои на СВХ из-за ошибок в маркировке. Потери на хранении составляли до 15 000 ₽ за партию.</p>
+        <h4 class="case-subtitle">Решение</h4>
+        <p>Джарвис внедрил систему пред-проверки маркировки поставщика по стандартам РФ.</p>
+      </div>
+      <div>
+        <h4 class="case-subtitle">Результаты</h4>
+        <div class="case-results-grid">
+          <div class="result-item"><div class="result-label">Простой</div><div class="result-value red">5 дней</div></div>
+          <div class="result-item"><div class="result-label">Простой (ИИ)</div><div class="result-value green">0 дней</div></div>
+          <div class="result-item"><div class="result-label">Потери СВХ</div><div class="result-value red">15 000 ₽</div></div>
+          <div class="result-item"><div class="result-label">Экономия</div><div class="result-value green">100%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="/" class="back-link">← Вернуться на главную</a>
+  </div>
+</div>
+</body>
+</html>
