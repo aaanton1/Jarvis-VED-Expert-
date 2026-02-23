@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+Sitemap: https://jarvis-ved.ru/sitemap.xml
+
+# IndexNow Support
+IndexNow: https://www.bing.com/indexnow?url=https://jarvis-ved.ru/&key=97519ac14b634959bc28acf3bbd983ba
