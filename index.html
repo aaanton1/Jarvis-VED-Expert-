@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Джарвис ВЭД — Ваш персональный ИИ-брокер для ВЭД</title>
+    <meta name="description" content="Считаем пошлины, проверяем риски и готовим документы за 5 минут. Ваш персональный ИИ-брокер для ВЭД.">
+    
+    <!-- Verification Tags -->
+    <meta name="google-site-verification" content="google0ab32bf04b70e72a" />
+    <meta name="yandex-verification" content="4b9779f9bb06142b" />
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00F0FF;
+            --primary-dark: #00D1E0;
+            --bg: #050505;
+            --card-bg: #0F1115;
+            --text: #FFFFFF;
+            --text-dim: #94A3B8;
+            --accent: #3B82F6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 20px; color: var(--primary); text-decoration: none; }
+        .btn-tg {
+            background: var(--primary);
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .btn-tg:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4); }
+
+        /* Hero */
+        .hero { padding: 160px 0 80px; text-align: center; }
+        .fomo-badge {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.1);
+            color: #FCA5A5;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        h1 { font-size: clamp(32px, 8vw, 64px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+        .hero p { font-size: 18px; color: var(--text-dim); max-width: 600px; margin: 0 auto 40px; }
+        .btn-main {
+            background: var(--primary);
+            color: #000;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        /* Pricing */
+        .pricing { padding: 80px 0; }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .price-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .price-card.popular { border-color: var(--primary); }
+        .popular-badge {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: var(--accent);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px; font-weight: 700;
+        }
+        .price-card h3 { font-size: 20px; margin-bottom: 12px; }
+        .price { font-size: 48px; font-weight: 800; margin-bottom: 24px; }
+        .price span { font-size: 16px; color: var(--text-dim); }
+        .features { list-style: none; margin-bottom: 32px; }
+        .features li { color: var(--text-dim); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .features li::before { content: "✓"; color: var(--primary); font-weight: 900; }
+        .btn-price {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            background: var(--primary);
+            color: #000;
+        }
+        .btn-price.alt { background: var(--accent); color: #fff; }
+
+        /* FAQ */
+        .faq { padding: 80px 0; }
+        .faq-item {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+        .faq-question { font-weight: 700; display: flex; justify-content: space-between; }
+        .faq-answer { color: var(--text-dim); margin-top: 12px; display: none; }
+
+        /* Footer */
+        footer { padding: 80px 0 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-links { display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-dim); text-decoration: none; font-size: 14px; }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { color: var(--text-dim); font-size: 12px; margin-top: 24px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <a href="/" class="logo">
+            <img src="favicon.png" alt="" width="24" height="24">
+            ДЖАРВИС ВЭД
+        </a>
+        <a href="https://t.me/jarvis_ved_bot" class="btn-tg">Бот в Telegram</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="fomo-badge">🔥 Цена 990 ₽ актуальна до 1 марта. Далее — повышение.</div>
+        <h1>Ваш персональный ИИ-брокер для ВЭД</h1>
+        <p>Считаем пошлины, проверяем риски и готовим документы за 5 минут. Экономьте время и деньги на таможенном оформлении.</p>
+        <a href="https://t.me/jarvis_ved_bot" class="btn-main">Попробовать бесплатно</a>
+    </div>
+</section>
+
+<section class="pricing">
+    <div class="container">
+        <h2 style="text-align: center; font-size: 32px;">Выберите свой тариф</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Разовый отчет</h3>
+                <div class="price">990 ₽</div>
+                <ul class="features">
+                    <li>Полный расчет пошлин</li>
+                    <li>Проверка рисков (1 товар)</li>
+                    <li>Готовый PDF-отчет</li>
+                </ul>
+                <a href="https://t.me/jarvis_ved_bot" class="btn-price">Купить отчет</a>
+            </div>
+            <div class="price-card popular">
+                <div class="popular-badge">POPULAR</div>
+                <h3>Тариф ПРОДАВЕЦ</h3>
+                <div class="price">2990 ₽ <span>/мес</span></div>
+                <ul class="features">
+                    <li>Безлимитные расчеты</li>
+                    <li>Приоритетная поддержка</li>
+                    <li>Все обновления ИИ</li>
+                </ul>
+                <a href="https://t.me/jarvis_ved_bot" class="btn-price">Подключить</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="container">
+        <h2 style="margin-bottom: 40px;">Частые вопросы</h2>
+        <div class="faq-item">
+            <div class="faq-question">Как работает ИИ-брокер? <span>+</span></div>
+            <div class="faq-answer">Наш ИИ обучен на базе данных таможенных правил и ТН ВЭД. Он анализирует ваш товар и мгновенно выдает расчеты.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Насколько точны расчеты? <span>+</span></div>
+            <div class="faq-answer">Точность расчетов составляет более 98%. Однако мы рекомендуем всегда проверять финальные документы.</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="logo">ДЖАРВИС ВЭД</div>
+        <div class="footer-links">
+            <a href="/privacy/">Политика конфиденциальности</a>
+            <a href="/terms/">Условия использования</a>
+            <a href="/refund/">Политика возврата</a>
+        </div>
+        <div class="copyright">© 2026 Джарвис ВЭД. Все права защищены.</div>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const isOpen = answer.style.display === 'block';
+            answer.style.display = isOpen ? 'none' : 'block';
+        });
+    });
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i][a]=m[i][a]||[]).push(arguments)};
+   m[i][l]=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(98436440, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/98436440" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
